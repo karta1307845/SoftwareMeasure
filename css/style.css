@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {
+    font-family: 'Noto Sans TC' !important;
+    font-weight: 300 !important;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 60px;
+    background: #3b5998;
+    box-sizing: border-box;
+    line-height: 60px;
+}
+
+.navbar-title {
+    color: white;
+    margin-left: 70px;
+    font-size: 22px !important;
+    font-family: 'Noto Sans TC' !important;
+    line-height: 60px !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.add-book-card-title {
+    font-size: 22px !important;
+    font-family: 'Noto Sans TC' !important;
+    color: white;
+}
+
+.add-book-card-header {
+    background: #3b5998;
+}
+
+.add-book-card-footer {
+    cursor: pointer;
+}
+
+.add-book-card-footer:hover {
+    background: #3b5998;
+}
+
+.add-book-card-footer:hover .btn-add-book {
+    color: white;
+}
+
+.fieldlist {
+    margin: 0 0 3px;
+    padding: 0;
+}
+
+.fieldlist li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.fieldlist label {
+    display: block;
+    padding-bottom: 1px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 300;
+    color: #444;
+}
+
+#add_window_wnd_title {
+    font-size: 15px;
+    font-weight: 1;
+}
+
+#add_window .k-input, .k-textbox, .k-item {
+    font-weight: 300;
+}
+
+.btn-open-add-window {
+    margin-bottom: 30px;
+}
+
+.grid-toolbar {
+    height: 50px;
+    line-height: 50px;
+}
+
+.grid-toolbar input {
+    color: white;
+    background: #3343a4;
+    border: none;
+    padding: 10px 20px;
+    width: 367px;
+}
+
+.grid-toolbar input::placeholder {
+    color: #9d9d9d;
+}
+
+#open_window_btn {
+    margin: 20px;
+}
+
+#add_product_btn {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
