@@ -46,47 +46,31 @@
 
         session_start();
 
-        $out = "";
-
         if ( ! empty( $_POST ) ) {
             if ( isset( $_POST['username'] ) && isset( $_POST['password'] )) {
-                $servername = "localhost";
-                $db_username = "username";
-                $db_password = "password";
-                $dbname = "myDB";
-
-                $conn = new mysqli ($servername, $db_username, $db_password, $dbname);
+                $conn = new mysqli ("localhost", "username", "password", "myDB");
 
                 // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $stmt = $conn->prepare("SELECT username, user_password FROM users WHERE username = ?  AND  user_password = ? LIMIT 1");
-                //$stmt->bind_param('s', $_POST['username']);
+                $sql = "SELECT id FROM users WHERE username = ? AND user_password = ?";
+                $stmt = $conn->prepare($sql);
                 $stmt->bind_param('ss', $_POST['username'], $_POST['password']);
                 $stmt->execute();
-                //$result = $stmt->get_result();
-                $result = $stmt->store_result();
-                //$user = $result->fetch_object();
-                    
-                // Verify user password and set $_SESSION
-                /*if ( password_verify( $_POST['password'], $user->user_password ) ) {
-                    $_SESSION['id'] = $user->ID;
-                    echo "<script type='text/javascript'> location.href='main.php' </script>";
+                $stmt->store_result();
+
+                if ($stmt->num_rows == 1) {
+                    $stmt->bind_result($id);
+                    $stmt->fetch();
+                    //Verify username first. if username exist, then verify the password
+                    //session_regenerate_id();
+                    //$_SESSION['loggedin'] = TRUE;
+                    $_SESSION['username'] = $_POST['username'];
+                    $_SESSION['id'] = $id;
+                    echo "<script type='text/javascript'> alert('Login Successfully!'); window.location.href='main.php' </script>";
                 } else {
-                    echo "<script type='text/javascript'>alert('User Name Or Password Invalid!')</script>";
-                }*/
-                if($stmt->num_rows == 1) { //To check if the row exists
-                    while($stmt->fetch()) { //fetching the contents of the row\
-                        $out = "Success";
-                        $_SESSION['Logged'] = 1;
-                        $_SESSION['username'] = $_POST['username'];
-                        echo "<script type='text/javascript'> alert('Login Successfully!'); window.location.href='main.php' </script>";
-                        exit();
-                    }
-                } else {
-                    $out = "Fail";
                     echo "<script type='text/javascript'> alert('Username Or Password Invalid!');</script>";
                 }
                 $stmt->close();

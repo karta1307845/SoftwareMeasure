@@ -34,7 +34,7 @@
                                 <div class="col-sm-5"></div>
                                 <div class="col-sm-7 text-right">
                                     <div>
-                                        <a href="loginForm.html">Back to Login</a>
+                                        <a href="login.php">Back to Login</a>
                                     </div>
                                 </div>
                             </div>
@@ -68,30 +68,19 @@
             }
 
             $stmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
-            //$stmt->bind_param('s', $_POST['username']);
             $stmt->bind_param('s', $_POST['username']);
             $stmt->execute();
-            //$result = $stmt->get_result();
             $result = $stmt->store_result();
-            //$user = $result->fetch_object();
-                
-            // Verify user password and set $_SESSION
-            /*if ( password_verify( $_POST['password'], $user->user_password ) ) {
-                $_SESSION['id'] = $user->ID;
-                echo "<script type='text/javascript'> location.href='main.php' </script>";
-            } else {
-                echo "<script type='text/javascript'>alert('User Name Or Password Invalid!')</script>";
-            }*/
+            
             if($stmt->num_rows == 1) { //To check if the row exists
                 while($stmt->fetch()) { //fetching the contents of the row
                     echo "<script type='text/javascript'> alert('Username has been used!');</script>";
                 }
             } else {
-                $stmt = $conn->prepare("INSERT INTO users (email, username, user_password) VALUES (?, ?, ?)");
+                $sql = "INSERT INTO users (email, username, user_password) VALUES (?, ?, ?)";
+                $stmt = $conn->prepare($sql);
                 $stmt->bind_param('sss', $_POST['email'], $_POST['username'], $_POST['password']);
                 $stmt->execute();
-                $_SESSION['Logged'] = 1;
-                $_SESSION['username'] = $_POST['username'];
                 echo "<script type='text/javascript'> alert('Registration successfully!'); window.location.href='login.php' </script>";
                 exit();
             }

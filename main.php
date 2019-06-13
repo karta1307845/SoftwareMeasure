@@ -4,13 +4,12 @@
 // Always start this first
 session_start();
 
-if ( isset( $_SESSION['username'] ) ) {
+if ( isset( $_SESSION['id'] ) ) {
     // Grab user data from the database using the user_id
     // Let them access the "logged in only" pages
     echo "Hello! {$_SESSION['username']}";
 } else {
     // Redirect them to the login page
-    //header("Location: http://www.yourdomain.com/login.php");
     echo "<script language='javascript' type='text/javascript'> location.href='login.php' </script>";
 }
 ?>
