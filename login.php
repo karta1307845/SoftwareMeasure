@@ -48,7 +48,7 @@
 
         if ( ! empty( $_POST ) ) {
             if ( isset( $_POST['username'] ) && isset( $_POST['password'] )) {
-                $conn = new mysqli ("localhost", "username", "password", "myDB");
+                $conn = new mysqli ("localhost", "johnny", "123456789", "software_measure");
 
                 // Check connection
                 if ($conn->connect_error) {
@@ -69,7 +69,8 @@
                     //$_SESSION['loggedin'] = TRUE;
                     $_SESSION['username'] = $_POST['username'];
                     $_SESSION['id'] = $id;
-                    echo "<script type='text/javascript'> alert('Login Successfully!'); window.location.href='main.php' </script>";
+                    header("Location: ./index.php");
+                    exit;
                 } else {
                     echo "<script type='text/javascript'> alert('Username Or Password Invalid!');</script>";
                 }

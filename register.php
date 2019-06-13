@@ -55,10 +55,11 @@
 
     if ( ! empty( $_POST ) ) {
         if ( isset( $_POST['email'] ) && isset( $_POST['username'] ) && isset( $_POST['password'] )) {
+            // 連接資料庫會用到的變數
             $servername = "localhost";
-            $db_username = "username";
-            $db_password = "password";
-            $dbname = "myDB";
+            $db_username = "johnny";
+            $db_password = "123456789";
+            $dbname = "software_measure";
 
             $conn = new mysqli ($servername, $db_username, $db_password, $dbname);
 
