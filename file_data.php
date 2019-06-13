@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $uploadOk = 0;
         }
         if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
+            echo "上傳失敗";
         } else {
             if (move_uploaded_file($_FILES["files"]["tmp_name"], $target_file)) {
                 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->close();
                 $conn->close();
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                echo "上傳時發生錯誤";
             }
         }
     }

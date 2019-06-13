@@ -8,7 +8,7 @@ $(function () {
             select: "選擇檔案",
             clearSelectedFiles: "清除",
             uploadSelectedFiles: "上傳檔案",
-            headerStatusUploaded: "上傳成功",
+            headerStatusUploaded: "完成",
             headerStatusUploading: "正在上傳",
             invalidFileExtension: "不允許的檔案格式"
         },
@@ -17,13 +17,13 @@ $(function () {
             maxFileSize: 900000
         },
         multiple: false,
-        complete: function () {
+        success: function (e) {
+            $("#errorMsg").text("上傳成功").prop("class", "success");
             $("#file_grid").data("kendoGrid").dataSource.read();
         },
         error: function (e) {
             var request = e.XMLHttpRequest;
-            alert(request.responseText);
-            $("#files").data("kendoUpload").localization.headerStatusUploaded = "failed";
+            $("#errorMsg").text(request.responseText).prop("class", "error");
         }
     });
 
