@@ -1,11 +1,16 @@
 .navbar-text {
     position: absolute;
-    right: 100px;
+    right: 180px;
     font-family: "微軟正黑體";
-    color: darkblue;
+    font-size: 20px;
+    color: antiquewhite;
 }
 
 li {
     font-family: "微軟正黑體";
     font-size: 20px;
+}
+
+a {
+    color: antiquewhite;
 }

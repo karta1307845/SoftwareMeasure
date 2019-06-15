@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("location:login.php");
+echo "<script type='text/javascript'> alert('會員登出'); location.href='index.php'; </script>";
 exit();
 ?>

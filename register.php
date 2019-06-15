@@ -25,13 +25,13 @@
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                             <label for="uname">電子郵件</label><span id = "must">*</span><br>
                             <input type="email" class="form-control mb-2 mr-sm-2" name="email"
-                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["email"]; }?>" placeholder="Enter your Email" required>
+                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["email"]; }?>" placeholder="請輸入電子郵件" required>
                             <label for="uname">帳號</label><span id = "must">*</span><br>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="username"
-                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="Enter your username" required>
+                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="請輸入帳號" required>
                             <label for="pwd">密碼</label><span id = "must">*</span><br>
                             <input type="password" class="form-control mb-2 mr-sm-2" name="password"
-                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["password"]; }?>" placeholder="Enter your password" required><br>
+                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["password"]; }?>" placeholder="請輸入密碼" required><br>
                             <div class="row">
                                 <div class="col-sm-5"></div>
                                 <div class="col-sm-7 text-right">
@@ -59,9 +59,9 @@
         if ( isset( $_POST['email'] ) && isset( $_POST['username'] ) && isset( $_POST['password'] )) {
             // 連接資料庫會用到的變數
             $servername = "localhost";
-            $db_username = "johnny";
-            $db_password = "123456789";
-            $dbname = "software_measure";
+            $db_username = "username";
+            $db_password = "password";
+            $dbname = "myDB";
 
             $conn = new mysqli ($servername, $db_username, $db_password, $dbname);
 
@@ -84,7 +84,7 @@
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param('sss', $_POST['email'], $_POST['username'], $_POST['password']);
                 $stmt->execute();
-                echo "<script type='text/javascript'> alert('Registration successfully!'); window.location.href='login.php' </script>";
+                echo "<script type='text/javascript'> alert('註冊成功'); window.location.href='login.php' </script>";
                 exit();
             }
             $stmt->close();

@@ -22,9 +22,9 @@
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                             
                                 <label for="uname">帳號</label><br>
-                                <input type="text" class="form-control mb-2 mr-sm-2" name="username" value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="Enter your username" required>
+                                <input type="text" class="form-control mb-2 mr-sm-2" name="username" value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="請輸入帳號" required>
                                 <label for="pwd">密碼</label><br>
-                                <input type="password" class="form-control mb-2 mr-sm-2" name="password" value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["password"]; } ?>" placeholder="Enter your password" required><br>
+                                <input type="password" class="form-control mb-2 mr-sm-2" name="password" value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["password"]; } ?>" placeholder="請輸入密碼" required><br>
                                 <div class="row">
                                     <div class="col-sm-5"></div>
                                     <div class="col-sm-7 text-right">
@@ -49,7 +49,7 @@
 
         if ( ! empty( $_POST ) ) {
             if ( isset( $_POST['username'] ) && isset( $_POST['password'] )) {
-                $conn = new mysqli ("localhost", "johnny", "123456789", "software_measure");
+                $conn = new mysqli ("localhost", "username", "password", "myDB");
 
                 // Check connection
                 if ($conn->connect_error) {
@@ -70,10 +70,10 @@
                     $_SESSION['loggedin'] = TRUE;
                     $_SESSION['username'] = $_POST['username'];
                     $_SESSION['id'] = $id;
-                    header("Location: ./index.php");
+                    echo "<script type='text/javascript'> alert('登入成功'); location.href='index.php'; </script>";
                     exit;
                 } else {
-                    echo "<script type='text/javascript'> alert('Username Or Password Invalid!');</script>";
+                    echo "<script type='text/javascript'> alert('帳號或密碼錯誤!');</script>";
                 }
                 $stmt->close();
                 $conn->close();
