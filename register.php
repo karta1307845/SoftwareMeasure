@@ -84,7 +84,10 @@
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param('sss', $_POST['email'], $_POST['username'], $_POST['password']);
                 $stmt->execute();
-                echo "<script type='text/javascript'> alert('註冊成功'); window.location.href='login.php' </script>";
+
+                mkdir("upload/" . $stmt->insert_id);  // 建立資料夾，用來存放該使用者上傳的檔案
+
+                echo "<script type='text/javascript'> alert('Registration successfully!'); window.location.href='login.php' </script>";
                 exit();
             }
             $stmt->close();
