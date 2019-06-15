@@ -1,0 +1,20 @@
+body {
+    background-color: lightgray;
+    font-family: "微軟正黑體";
+}
+
+.card {
+    margin-top: 80px;
+}
+
+label {   
+    font-size: 18px;
+}
+
+#must {
+    color: red;
+}
+
+a {
+    color: green;
+}
