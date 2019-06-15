@@ -9,37 +9,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/form_style.css">
 </head>
 
-<body style="background-color: lightgray">
+<body>
     <div class="container">
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 center">
                 <!-- Material form login -->
-                <div class="card" style=" margin-top: 50px;">
-                    <h2 class="text-center py-4">REGISTER</h2>
+                <div class="card">
+                    <h1 class="text-center py-4"><b>加入會員</b></h1>
                     <div class="card-body px-lg-5 py-0">
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                            <label for="uname">EMAIL:</label><br>
+                            <label for="uname">電子郵件</label><span id = "must">*</span><br>
                             <input type="email" class="form-control mb-2 mr-sm-2" name="email"
-                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["email"]; }?>" placeholder="Enter your Email" required><br>
-                            <label for="uname">USERNAME:</label><br>
+                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["email"]; }?>" placeholder="Enter your Email" required>
+                            <label for="uname">帳號</label><span id = "must">*</span><br>
                             <input type="text" class="form-control mb-2 mr-sm-2" name="username"
-                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="Enter your username" required><br>
-                            <label for="pwd">PASSWORD:</label><br>
+                                value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="Enter your username" required>
+                            <label for="pwd">密碼</label><span id = "must">*</span><br>
                             <input type="password" class="form-control mb-2 mr-sm-2" name="password"
                                 value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["password"]; }?>" placeholder="Enter your password" required><br>
                             <div class="row">
                                 <div class="col-sm-5"></div>
                                 <div class="col-sm-7 text-right">
                                     <div>
-                                        <a href="login.php">Back to Login</a>
+                                        <a href="login.php">回到會員登入</a>
                                     </div>
                                 </div>
                             </div>
 
-                            <input type="submit" class="btn btn-success my-4 btn-block btn-lg" value="Register">
+                            <input type="submit" class="btn btn-success my-4 btn-block btn-lg" value="加入"><br>
 
                         </form>
                     </div>

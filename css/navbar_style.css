@@ -1,0 +1,11 @@
+.navbar-text {
+    position: absolute;
+    right: 100px;
+    font-family: "微軟正黑體";
+    color: darkblue;
+}
+
+li {
+    font-family: "微軟正黑體";
+    font-size: 20px;
+}

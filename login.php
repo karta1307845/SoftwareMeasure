@@ -9,31 +9,32 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+        <link rel="stylesheet" href="css/form_style.css">
     </head>
-    <body style="background-color: lightgray">
+    <body>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6 center">
-                    <div class="card" style=" margin-top: 80px;">
-                        <h2 class="text-center py-4">LOGIN</h2>
+                    <div class="card">
+                        <h1 class="text-center py-4"><b>會員登入</b></h1>
                         <div class="card-body px-lg-5 pt-0">
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                             
-                                <label for="uname">USERNAME:</label><br>
-                                <input type="text" class="form-control mb-2 mr-sm-2" name="username" value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="Enter your username" required><br>
-                                <label for="pwd">PASSWORD:</label><br>
+                                <label for="uname">帳號</label><br>
+                                <input type="text" class="form-control mb-2 mr-sm-2" name="username" value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["username"]; }?>" placeholder="Enter your username" required>
+                                <label for="pwd">密碼</label><br>
                                 <input type="password" class="form-control mb-2 mr-sm-2" name="password" value="<?php if (empty($_POST["username"])) {echo "";} else { echo $_POST["password"]; } ?>" placeholder="Enter your password" required><br>
                                 <div class="row">
                                     <div class="col-sm-5"></div>
                                     <div class="col-sm-7 text-right">
                                         <div>
-                                            <p>Not a member? <a href="register.php">Register</a></p>
+                                            <p>還不是會員? <a href="register.php">加入會員</a></p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <input type="submit" class="btn btn-info my-4 btn-block btn-lg" value="Login">
+                                <input type="submit" class="btn btn-info my-4 btn-block btn-lg" value="登入">
                             </form>
                         </div>
                     </div>
@@ -66,7 +67,7 @@
                     $stmt->fetch();
                     //Verify username first. if username exist, then verify the password
                     //session_regenerate_id();
-                    //$_SESSION['loggedin'] = TRUE;
+                    $_SESSION['loggedin'] = TRUE;
                     $_SESSION['username'] = $_POST['username'];
                     $_SESSION['id'] = $id;
                     header("Location: ./index.php");
