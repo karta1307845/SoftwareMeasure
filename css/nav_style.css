@@ -1,16 +1,39 @@
+body {
+    background-color:whitesmoke;
+}
+
+nav {
+    font-family: "微軟正黑體";
+    font-size: 20px;
+}
+
 .navbar-text {
     position: absolute;
     right: 180px;
-    font-family: "微軟正黑體";
-    font-size: 20px;
-    color: antiquewhite;
 }
 
-li {
+header a {
+    color: black;
     font-family: "微軟正黑體";
-    font-size: 20px;
 }
 
-a {
-    color: antiquewhite;
+header .header-title {
+    margin: 10px 0 0 30px;
+}
+
+header .header-en {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 20px;
+    font-family: "Microsoft Sans Serif";
+}
+
+hr.section-divider {
+    border-top: 3px solid lightgray;
+}
+
+.footer-copyright {
+    background-color: darkslategrey;
+    color: whitesmoke;
 }

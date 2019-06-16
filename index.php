@@ -18,8 +18,23 @@ session_start();
         <link rel="stylesheet" href="css/nav_style.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark fixed-top">
-            <a class="navbar-brand" href="index.php"><i class="fa fa-home fa-1x"></i></a>
+        <header>
+            <div>
+                <div class="header-title"><a class="navbar-brand" href="index.php"><h2>軟體分析</h2></a></div>
+                <div class="header-en">SOFTWARE ANALYSIS</div>
+            </div>
+        </header>
+        
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#theme">系統主題</a></li>
+                <li class="nav-item"><a class="nav-link" href="#analysis">系統分析與設計</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tool">使用技術和工具</a></li>
+                <li class="nav-item"><a class="nav-link" href="#source">資料來源</a></li>
+                <li class="nav-item"><a class="nav-link" href="#member">組員及分工</a></li>
+                <li class="nav-item"><a class="nav-link" href="#code">程式碼</a></li>
+            </ul>
+            
             <ul class="navbar-nav ml-auto">
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
@@ -44,6 +59,40 @@ session_start();
                 }
                 ?>
             </ul>
-        </nav>     
+        </nav>
+        
+        <!-- section1 -->
+        <div class="container-fluid" id="theme" style="height:400px;">
+            
+        </div><hr class="section-divider">
+
+        <!-- section2 -->
+        <div class="container-fluid" id="analysis" style="height:400px;">
+            
+        </div><hr class="section-divider">
+
+        <!-- section3 -->
+        <div class="container-fluid" id="tool" style="height:400px;">
+            
+        </div><hr class="section-divider">
+
+        <!-- section4 -->
+        <div class="container-fluid" id="source" style="height:400px;">
+            
+        </div><hr class="section-divider">
+
+        <!-- section5 -->
+        <div class="container-fluid" id="member" style="height:400px;">
+            
+        </div><hr class="section-divider">
+
+        <!-- section6 -->
+        <div class="container-fluid" id="code" style="height:400px;">
+            
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">&copy; 2019 Copyright</a></div>
+        <!-- Copyright -->
     </body>
 </html>

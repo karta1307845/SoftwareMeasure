@@ -10,10 +10,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="css/form_style.css">
+    <!-- Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/nav_style.css">
 </head>
 
-<body>
+<body style="background-color:whitesmoke;">
+    <header>
+        <div class="header-title"><a class="navbar-brand" href="index.php"><h2>軟體分析</h2></a></div>
+        <div class="header-en">SOFTWARE ANALYSIS</div>
+    </header><hr>
     <div class="container">
         <div class="row">
             <div class="col-sm-3"></div>
@@ -87,7 +94,7 @@
 
                 mkdir("upload/" . $stmt->insert_id);  // 建立資料夾，用來存放該使用者上傳的檔案
 
-                echo "<script type='text/javascript'> alert('Registration successfully!'); window.location.href='login.php' </script>";
+                echo "<script type='text/javascript'> alert('註冊成功!'); window.location.href='login.php' </script>";
                 exit();
             }
             $stmt->close();

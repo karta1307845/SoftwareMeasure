@@ -1,10 +1,9 @@
 body {
-    background-color: lightgray;
     font-family: "微軟正黑體";
 }
 
 .card {
-    margin-top: 80px;
+    margin-top: 0px;
 }
 
 label {   
@@ -13,8 +12,4 @@ label {
 
 #must {
     color: red;
-}
-
-a {
-    color: green;
 }
