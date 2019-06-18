@@ -14,14 +14,16 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <h1 class="navbar-title">軟體分析</h1>
-        </nav>
+        <ul class="navbar">
+            <li style="float: left;"><a class="navbar-title" href="index.php">軟體分析</a></li>
+            <li style="float: right;"><a class="navbar-logout" href="logout.php">登出</a></li>
+        </ul>
     </header>
     <main>
         <div class="uk-container align-center">
             <div style="text-align: left; margin-bottom: 20px;">
-                <h3>上傳檔案</h3>
+                <h3><?php echo $_GET["projectName"] ?> 上傳檔案</h3>
+                <input type="hidden" id="projectId" value=<?php echo $_GET["projectId"] ?>>
                 <div style="width:40%; display: inline-block;">
                     <input name="files" id="files" type="file" />
                 </div>

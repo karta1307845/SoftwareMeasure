@@ -1,4 +1,6 @@
 $(function () {
+    var projectId = $("#projectId").val();
+
     $("#files").kendoUpload({
         async: {
             autoUpload: false,
@@ -12,9 +14,13 @@ $(function () {
             headerStatusUploading: "正在上傳",
             invalidFileExtension: "不允許的檔案格式"
         },
+        upload: function (e) {
+            e.data = {
+                projectId: projectId
+            };
+        },
         validation: {
-            allowedExtensions: [".jpg"],
-            maxFileSize: 900000
+            allowedExtensions: [".xml", ".xmi"]
         },
         multiple: false,
         success: function (e) {
@@ -43,15 +49,16 @@ $(function () {
         dataSource: {
             transport: {
                 read: {
-                    url: "./file_data.php",
+                    url: "./file_data.php?projectId=" + projectId,
                     dataType: "json"
                 }
             },
             schema: {
                 model: {
                     fields: {
+                        fileName: { type: "string" },
                         filePath: { type: "string" },
-                        uploadDate: { type: "date" }
+                        uploadDate: { type: "string" }
                     }
                 }
             },
@@ -65,8 +72,8 @@ $(function () {
             numeric: false
         },
         columns: [
-            { field: "filePath", title: "檔案名稱", width: "35%" },
-            { field: "uploadDate", title: "上傳日期", width: "15%", format: "{0:yyyy-MM-dd}" },
+            { field: "fileName", title: "檔案名稱", width: "35%" },
+            { field: "uploadDate", title: "上傳時間", width: "15%" },
             { command: { text: "分析", click: viewOrder }, title: " ", width: "95px" },
             { command: { text: "刪除", click: deleteFile }, title: " ", width: "95px" }
         ]

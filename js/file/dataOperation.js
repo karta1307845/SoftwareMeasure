@@ -17,13 +17,15 @@ function deleteFile(e) {
             type: "POST",
             dataType: "text",
             success: function (result) {
-                if (result == "success") {
-                    alert("成功刪除");
+                if (result == "delete success") {
+                    $("#errorMsg").text("刪除成功").prop("class", "success");
                     $("#file_grid").data("kendoGrid").dataSource.read();
-                }else{
-                    alert("刪除失敗");
-                    $("#file_grid").data("kendoGrid").dataSource.read();
+                } else {
+                    $("#errorMsg").text(result).prop("class", "error");
                 }
+            },
+            error: function () {
+                $("#errorMsg").text("伺服器發生錯誤").prop("class", "error");
             }
         });
         /*var projectDataSource = $("#project_grid").data("kendoGrid").dataSource;
@@ -31,7 +33,7 @@ function deleteFile(e) {
     }
 }
 
-// 根據檔案路徑搜尋檔案
+// 根據檔名搜尋檔案
 function searchFile() {
     var fileDataSource = $("#file_grid").data("kendoGrid").dataSource;
     var value = this.value;
@@ -39,6 +41,6 @@ function searchFile() {
         fileDataSource.filter({});
     }
     fileDataSource.filter(
-        { field: "filePath", operator: "contains", value: value }
+        { field: "fileName", operator: "contains", value: value }
     );
 }

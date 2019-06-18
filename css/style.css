@@ -13,6 +13,10 @@ main {
 }
 
 .navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     height: 60px;
     background: #3b5998;
     box-sizing: border-box;
@@ -20,41 +24,26 @@ main {
 }
 
 .navbar-title {
-    color: white;
     margin-left: 70px;
     font-size: 22px !important;
     font-family: 'Noto Sans TC' !important;
     line-height: 60px !important;
 }
 
-.text-center {
-    text-align: center;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-logout {
+    margin-right: 70px;
+    font-family: 'Noto Sans TC' !important;
+    line-height: 60px !important;
 }
 
 .align-center {
     text-align: center;
-}
-
-.add-book-card-title {
-    font-size: 22px !important;
-    font-family: 'Noto Sans TC' !important;
-    color: white;
-}
-
-.add-book-card-header {
-    background: #3b5998;
-}
-
-.add-book-card-footer {
-    cursor: pointer;
-}
-
-.add-book-card-footer:hover {
-    background: #3b5998;
-}
-
-.add-book-card-footer:hover .btn-add-book {
-    color: white;
 }
 
 .fieldlist {
@@ -76,19 +65,6 @@ main {
     color: #444;
 }
 
-#add_window_wnd_title {
-    font-size: 15px;
-    font-weight: 1;
-}
-
-#add_window .k-input, .k-textbox, .k-item {
-    font-weight: 300;
-}
-
-.btn-open-add-window {
-    margin-bottom: 30px;
-}
-
 .grid-toolbar {
     height: 50px;
     line-height: 50px;
@@ -104,16 +80,6 @@ main {
 
 .grid-toolbar input::placeholder {
     color: #9d9d9d;
-}
-
-#open_window_btn {
-    margin: 20px;
-}
-
-#add_product_btn {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 30px;
 }
 
 .success {

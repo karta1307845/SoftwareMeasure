@@ -14,19 +14,21 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <h1 class="navbar-title">軟體分析</h1>
-        </nav>
+        <ul class="navbar">
+            <li style="float: left;"><a class="navbar-title" href="index.php">軟體分析</a></li>
+            <li style="float: right;"><a class="navbar-logout" href="logout.php">登出</a></li>
+        </ul>
     </header>
     <main>
         <div class="uk-container align-center">
             <div style="text-align: left; margin-bottom: 20px; ">
                 <h3>新增專案</h3>
-                <form action="./project_data.php" method="post">
-                    <input id="project_name" name="projectName" type="text" class="k-textbox"
-                        style="width: 40%; margin-right: 10px;" placeholder="專案名稱" />
-                    <button type="submit" class="k-button k-primary">新增</button>
-                </form>
+                <div>
+                    <input id="project_name" type="text" class="k-textbox"
+                        style="width: 30%; margin-bottom: 15px;" placeholder="專案名稱..." autocomplete="off"><br>
+                    <button id="add_project" class="k-button k-primary">新增</button>
+                    <span id="project_error" style="margin-left: 15px"></span>
+                </div>
             </div>
             <div id="project_grid">
             </div>
