@@ -33,11 +33,7 @@
             </div>
 
             <div id="view_window" class="uk-card" style="display:none;">
-                <ul>
-                    <li>Classes:</li>
-                    <li>Component:</li>
-                    <li>Interface:</li>
-                </ul>
+                <div id="analyze_result" style="overflow:auto;"></div>
                 <div style="text-align: right;">
                     <button id="confirm_btn" class="k-button k-primary btn-add-book">確定</button>
                 </div>
@@ -55,7 +51,6 @@
 <script src="./js/uikit.min.js"></script>
 
 <script src="./js/file/dataOperation.js"></script>
-<script src="./js/file/windowEvent.js"></script>
 <script src="./js/file/init.js"></script>
 
 

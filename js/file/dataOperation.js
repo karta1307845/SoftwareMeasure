@@ -1,7 +1,21 @@
-// 查看訂單
-function viewOrder(e) {
+// 分析檔案
+function analyze(e) {
     e.preventDefault();
-    $("#view_window").data("kendoWindow").center().open();
+    var tr = $(e.target).closest("tr");
+    var data = this.dataItem(tr);
+    $.ajax({
+        url: "analyze.php",
+        data: { filePath: data.filePath },
+        type: "POST",
+        dataType: "text",
+        success: function (result) {
+            $("#analyze_result").html(result);
+            $("#view_window").data("kendoWindow").center().open();
+        },
+        error: function () {
+            $("#errorMsg").text("伺服器發生錯誤").prop("class", "error");
+        }
+    });
 }
 
 // 刪除檔案

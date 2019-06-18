@@ -1,6 +1,7 @@
 $(function () {
     var projectId = $("#projectId").val();
 
+    // 檔案上傳
     $("#files").kendoUpload({
         async: {
             autoUpload: false,
@@ -41,7 +42,9 @@ $(function () {
         actions: ["Close"],
         draggable: false,
         resizable: false,
-        close: viewWindowRefresh
+        close: function(){
+            $("#analyze_result").html();
+        }
     }).data("kendoWindow")
 
     // kendoGrid
@@ -74,13 +77,13 @@ $(function () {
         columns: [
             { field: "fileName", title: "檔案名稱", width: "35%" },
             { field: "uploadDate", title: "上傳時間", width: "15%" },
-            { command: { text: "分析", click: viewOrder }, title: " ", width: "95px" },
+            { command: { text: "分析", click: analyze }, title: " ", width: "95px" },
             { command: { text: "刪除", click: deleteFile }, title: " ", width: "95px" }
         ]
 
     });
 
-    // 查看完訂單，關閉視窗
+    // 關閉視窗按鈕
     $("#confirm_btn").click(function () {
         $("#view_window").data("kendoWindow").close();
     });

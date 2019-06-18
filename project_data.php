@@ -19,10 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
         $conn->close();
 
-        if (!rmdir("upload/" . $ownerId . "/" . $projectId)) {
-            echo ("無法移除專案資料夾");
-            exit;
-        }
+        deldir("upload/" . $ownerId . "/" . $projectId . "/");
+
         echo "delete success";
         exit;
     } else if (isset($_POST["operation"]) && $_POST["operation"] == "add") {  // 新增專案
@@ -99,4 +97,23 @@ function test_input($data)
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+}
+
+// 刪除資料夾
+function deldir($path)
+{
+    if (is_dir($path)) {
+        $p = scandir($path);
+        foreach ($p as $val) {
+            if ($val != "." && $val != "..") {
+                if (is_dir($path . $val)) {
+                    deldir($path . $val . '/');
+                    rmdir($path . $val . '/');
+                } else {
+                    unlink($path . $val);
+                }
+            }
+        }
+        rmdir($path);
+    }
 }
