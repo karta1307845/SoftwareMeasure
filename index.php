@@ -62,14 +62,15 @@ session_start();
         <!-- section1 -->
         <div class="container-fluid" id="theme">
             <div class="row">
+                <div class="col-md-1"></div>
                 <div class="col-md-4">
                     <br><br><p><img class="dialog" src="img/新增專案.png" style="width:400px; height:220px; margin-top:7px; border:2px grey solid;"></p>
                 </div>
                 <div class="col-md-4">
                     <br><br><p><img class="dialog" src="img/2.png" style="width:400px; height:220px; margin-top:7px; border:2px grey solid;"></p>
-                    <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-outline-warning" onclick="myFunction()">開始使用</button>
+                    <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-outline-warning btn-lg" onclick="myFunction()">開始使用</button>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <br><br><p><img class="dialog" src="img/3.png" style="width:250px; height:300px; margin-top:7px; border:2px grey solid;"></p>
                 </div>
             </div>
