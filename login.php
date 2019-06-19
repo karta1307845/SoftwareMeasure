@@ -55,7 +55,7 @@
 
         if ( ! empty( $_POST ) ) {
             if ( isset( $_POST['username'] ) && isset( $_POST['password'] )) {
-                $conn = new mysqli ("localhost", "username", "password", "myDB");
+                $conn = new mysqli ("localhost", "johnny", "123456789", "software_measure");
 
                 // Check connection
                 if ($conn->connect_error) {
