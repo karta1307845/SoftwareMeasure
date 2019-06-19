@@ -51,10 +51,11 @@
         <?php
 
         session_start();
+        include "database_field.php";
 
         if ( ! empty( $_POST ) ) {
             if ( isset( $_POST['username'] ) && isset( $_POST['password'] )) {
-                $conn = new mysqli ("localhost", "username", "password", "myDB");
+                $conn = new mysqli ($servername, $username, $password, $dbname);
 
                 // Check connection
                 if ($conn->connect_error) {
