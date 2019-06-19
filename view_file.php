@@ -24,11 +24,14 @@
             <div style="text-align: left; margin-bottom: 20px;">
                 <h3><?php echo $_GET["projectName"] ?> 上傳檔案</h3>
                 <input type="hidden" id="projectId" value=<?php echo $_GET["projectId"] ?>>
-                <div style="width:40%; display: inline-block;">
-                    <input name="files" id="files" type="file" />
-                </div>
-                <div style="width:40%; display: inline-block;">
-                    <p id="errorMsg" style="margin-left: 10px;"></p>
+                <div>
+                    <div style="width:40%; display: inline-block;">
+                        <input name="files" id="files" type="file" />
+                    </div>
+                    <div style="width:40%; display: inline-block;">
+                        <p id="errorMsg" style="margin-left: 10px;"></p>
+                    </div>
+                    <button id="back" class="k-button k-primary" style="float:right">返回</button>
                 </div>
             </div>
 

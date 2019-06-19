@@ -42,7 +42,7 @@ $(function () {
         actions: ["Close"],
         draggable: false,
         resizable: false,
-        close: function(){
+        close: function () {
             $("#analyze_result").html();
         }
     }).data("kendoWindow")
@@ -87,6 +87,11 @@ $(function () {
     $("#confirm_btn").click(function () {
         $("#view_window").data("kendoWindow").close();
     });
+
+    $("#back").click(function () {
+        $(location).prop("href", "action_index.php");
+    });
+
 
     // 搜尋檔案
     $("#file-grid-search").on("keyup", searchFile);
