@@ -89,7 +89,7 @@ $(function () {
     });
 
     $("#back").click(function () {
-        $(location).prop("href", "action_index.php");
+        $(location).prop("href", "action_file.php");
     });
 
 
