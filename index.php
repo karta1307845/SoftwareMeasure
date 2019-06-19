@@ -38,19 +38,10 @@ session_start();
                 <li class="nav-item"><a class="nav-link" href="#theme">系統主題</a></li>
                 <li class="nav-item"><a class="nav-link" href="#analysis">系統分析與設計</a></li>
                 <li class="nav-item"><a class="nav-link" href="#source">使用技術&工具&資料來源</a></li>
-                <li class="nav-item"><a class="nav-link" href="#member">組員及分工</a></li>
                 <li class="nav-item"><a class="nav-link" href="#code">程式碼</a></li>
             </ul>
             
             <ul class="navbar-nav ml-auto">
-                <!-- Dropdown -->
-                <!--<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">列表</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="action_index.php">新增專案</a>
-                        <a class="dropdown-item" href="action_file.php">上傳檔案</a>
-                    </div>
-                </li>-->
                 <?php
                 if ( isset($_SESSION['loggedin']) ) {
                     if ( $_SESSION['loggedin'] ) {
@@ -70,7 +61,8 @@ session_start();
         
         <!-- section1 -->
         <div class="container-fluid" id="theme">
-            <img class="dialog" src="img/新增專案.png" alt="點擊圖片放大" style="width:350px; height:200px; margin-top:7px;">
+            <img class="dialog" src="img/新增專案.png" style="width:350px; height:200px; margin-top:7px;">
+            <button type="button" class="btn btn-outline-warning" onclick="myFunction()">開始使用</button>
         </div><hr class="section-divider">
 
         <!-- section2 -->
@@ -78,14 +70,15 @@ session_start();
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2 text-center">
-                    <br><h4><i class="fa fa-expand-arrows-alt fa-1x mr-1"></i><b>系統架構圖</b></h4><br>
+                    <br><h4><b>系統架構圖</b></h4><br>
                     <div style="border:2px grey solid; width: 210px; height: 120px;"><img class="dialog" src="img/系統架構圖.png" alt="點擊圖片放大" style="width:200px; height:100px; margin-top:7px;"></div><br>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-6">
-                    <div id="dialog_large_image"></div>
+                    <br><br><div id="dialog_large_image"></div>
                 </div>
                 <div class="col-md-2"></div>
+            </div>
         </div><hr class="section-divider">
 
         <!-- section3 -->
@@ -106,6 +99,8 @@ session_start();
                     <p>jQuery</p>
                     <p>PHP</p>
                     <p><a href="https://getbootstrap.com/" target="_blank">Bootstrap 4</a></p>
+                    <p><a href="https://www.telerik.com/kendo-ui" target="_blank">Kendo UI</a></p>
+
 
                 </div>
                 <!-- Grid column -->
@@ -118,6 +113,8 @@ session_start();
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></p>
                     <p>Chrome</p>
+                    <p>Apache</p>
+                    <p>MySQL</p>
 
                 </div>
                 <!-- Grid column -->
@@ -138,18 +135,38 @@ session_start();
         </div><hr class="section-divider">
 
         <!-- section4 -->
-        <div class="container-fluid" id="member">
-            
-        </div><hr class="section-divider">
-
-        <!-- section5 -->
         <div class="container-fluid" id="code">
-            
+            <div class="row">
+                <div class="col-md-3">
+                    <br><h4><i class="fa fa-folder fa-1x mr-1"></i><b>新增專案</b></h4><br>
+                    <p><img src="img/code_new.png" style="width:300px; height:160px;"></p><br>
+                    <p><i class="fa fa-arrow-right fa-1x mr-1"></i>在server建立一個資料夾存放上傳的檔案</p>
+                </div>
+                <div class="col-md-3">
+                    <br><h4><i class="fa fa-file fa-1x mr-1"></i><b>上傳檔案</b></h4><br>
+                    <p><img src="img/code_upload.png" style="width:300px; height:160px;"></p><br>
+                    <p><i class="fa fa-arrow-right fa-1x mr-1"></i>把上傳的檔案放進專案的資料夾</p>
+                </div>
+                <div class="col-md-3">
+                    <br><h4><i class="fa fa-search-plus fa-1x mr-1"></i><b>剖析-start()</b></h4><br>
+                    <p><img src="img/code_analyze.png" style="width:300px; height:160px;"></p><br>
+                    <p><i class="fa fa-arrow-right fa-1x mr-1"></i>遇到xml檔開頭標籤就開始進行剖析</p>
+                </div>
+                <div class="col-md-3">
+                    <br><h4><i class="fa fa-search-minus fa-1x mr-1"></i><b>剖析-stop()</b></h4><br>
+                    <p><img src="img/code_analyze_stop.png" style="width:300px; height:160px;"></p><br>
+                    <p><i class="fa fa-arrow-right fa-1x mr-1"></i>遇到xml檔結束標籤時進行動作</p>
+                </div>
+            </div>
         </div>
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">&copy; 2019 Copyright</a></div>
         <!-- Copyright -->
-        
+        <script>
+            function myFunction() {
+                location.href='action_file.php';
+            }
+        </script>
     </body>
 </html>
