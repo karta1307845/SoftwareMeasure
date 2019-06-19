@@ -70,7 +70,7 @@ session_start();
         
         <!-- section1 -->
         <div class="container-fluid" id="theme">
-            
+            <img class="dialog" src="img/新增專案.png" alt="點擊圖片放大" style="width:350px; height:200px; margin-top:7px;">
         </div><hr class="section-divider">
 
         <!-- section2 -->
@@ -79,7 +79,7 @@ session_start();
                 <div class="col-md-1"></div>
                 <div class="col-md-2 text-center">
                     <br><h4><i class="fa fa-expand-arrows-alt fa-1x mr-1"></i><b>系統架構圖</b></h4><br>
-                    <div style="border:2px grey solid; width: 210px; height: 120px;"><img class="dialog" src="./系統架構圖.png" alt="點擊圖片放大" style="width:200px; height:100px; margin-top:7px;"></div><br>
+                    <div style="border:2px grey solid; width: 210px; height: 120px;"><img class="dialog" src="img/系統架構圖.png" alt="點擊圖片放大" style="width:200px; height:100px; margin-top:7px;"></div><br>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-6">
