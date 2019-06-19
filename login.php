@@ -11,8 +11,7 @@
 
         <!-- Icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/form.css">
-        <link rel="stylesheet" href="css/nav_style.css">
+        <link rel="stylesheet" href="css/form_style.css">
     </head>
     <body style="background-color:whitesmoke;">
         <header>
@@ -76,7 +75,7 @@
                     $_SESSION['loggedin'] = TRUE;
                     $_SESSION['username'] = $_POST['username'];
                     $_SESSION['id'] = $id;
-                    echo "<script type='text/javascript'> alert('登入成功'); location.href='index.php'; </script>";
+                    echo "<script type='text/javascript'> location.href='index.php'; </script>";
                     exit;
                 } else {
                     echo "<script type='text/javascript'> alert('帳號或密碼錯誤!');</script>";
